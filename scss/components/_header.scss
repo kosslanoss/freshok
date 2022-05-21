@@ -1,0 +1,79 @@
+.header {
+  padding: 50px 0 0;
+  background-color: $grey-lightest;
+  @extend %roboto-500;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: $roboto;
+    color: $title;
+  }
+
+  &__cart {
+    position: relative;
+    padding: 13px 2px 13px 40px;
+    transition: border-color 0.5s,  color 0.3s;
+    border: solid 2px transparent;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      top: 16px;
+      left: 0;
+      background-image: url(../images/cart.svg);
+    }
+
+    &:focus,
+    &:active {
+      opacity: 0.3;
+    }
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+.logo {
+  transition: opacity 0.2s;
+
+  &:focus,
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.menu {
+
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    padding-right: 45px;
+  }
+
+  &__link {
+    padding: 13px 2px 13px;
+    transition: border-color 0.5s, color 0.3s;
+    border: solid 2px transparent;
+
+    &:focus,
+    &:active {
+      opacity: 0.3;
+    }
+
+    &:hover {
+      color: $accent;
+    }
+
+    &--active {
+      border-bottom: solid 2px $accent;
+    }
+  }
+}
